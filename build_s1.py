@@ -6,7 +6,7 @@ from io import StringIO
 # ============================================================
 # 설정: Google Sheet ID (공개 시트로 설정 필요)
 # ============================================================
-SHEET_ID = "1w4ESHzJO1dzqd0XLxW7xGhDcmP43n6tIyO_JrZPVLd0"
+SHEET_ID = "1I4w4ewW-JdsgUjQHrC2Su_vYbxzvkXsMaeORp82B2Jk"
 
 # 탭별 CSV URL
 EMP_DATA_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet=emp_data"
