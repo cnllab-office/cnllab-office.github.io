@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNL 농약시험연구소 | 신뢰할 수 있는 농약 시험 전문기관</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a6b3c;
+        }
+
+        .logo span {
+            color: #2d8f5a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            font-weight: 500;
+            color: #333;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: #1a6b3c;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1a6b3c;
+            transition: width 0.3s;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            height: 600px;
+            background: linear-gradient(135deg, #1a6b3c 0%, #2d8f5a 50%, #3da86e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>') repeat;
+            background-size: 100px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            color: #fff;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #fff;
+            color: #1a6b3c;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-shapes {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero-shapes .circle {
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .hero-shapes .circle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+
+        .hero-shapes .circle::after {
+            content: '🔬';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+        }
+
+        /* About Section */
+        .section {
+            padding: 100px 20px;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #1a6b3c;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        /* Service Cards */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a6b3c, #2d8f5a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 36px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f8faf8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            align-items: center;
+        }
+
+        .features-image {
+            background: linear-gradient(135deg, #1a6b3c, #2d8f5a);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+        }
+
+        .features-content h3 {
+            font-size: 32px;
+            color: #1a6b3c;
+            margin-bottom: 20px;
+        }
+
+        .features-content p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #1a6b3c;
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, #1a6b3c 0%, #2d8f5a 100%);
+            color: #fff;
+            padding: 80px 20px;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: #f0f5f1;
+        }
+
+        .cta-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .cta-text h3 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .cta-text p {
+            color: #666;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a6b3c, #2d8f5a);
+            color: #fff;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(26, 107, 60, 0.4);
+        }
+
+        /* Notice Section */
+        .notice-section {
+            background: #fff;
+        }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .notice-box {
+            background: #f8faf8;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .notice-box h3 {
+            font-size: 20px;
+            color: #1a6b3c;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .notice-list {
+            list-style: none;
+        }
+
+        .notice-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notice-list li:last-child {
+            border-bottom: none;
+        }
+
+        .notice-list li a {
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .notice-list li a:hover {
+            color: #1a6b3c;
+        }
+
+        .notice-list li span {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d8f5a;
+            margin-bottom: 20px;
+        }
+
+        .footer-info p {
+            color: #999;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .footer-menu h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-menu ul {
+            list-style: none;
+        }
+
+        .footer-menu ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-menu ul li a {
+            color: #999;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-menu ul li a:hover {
+            color: #2d8f5a;
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-top {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero-shapes {
+                display: none;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-image {
+                height: 250px;
+                font-size: 80px;
+            }
+
+            .cta-box {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .notice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-item {
+                padding: 20px 0;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+        }
+
+        /* Mobile Menu */
+        .nav.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .nav.active a {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="#" class="logo">CNL <span>농약시험연구소</span></a>
+            <nav class="nav" id="nav">
+                <a href="#about">회사소개</a>
+                <a href="#services">시험서비스</a>
+                <a href="#research">연구분야</a>
+                <a href="#notice">공지사항</a>
+                <a href="#contact">문의하기</a>
+            </nav>
+            <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>신뢰할 수 있는<br>농약 시험 전문기관</h1>
+                <p>CNL 농약시험연구소는 정밀한 시험분석과 체계적인 연구로 농업 발전에 기여하며, 안전하고 효과적인 농약 사용을 위한 과학적 데이터를 제공합니다.</p>
+                <a href="#contact" class="hero-btn">상담 문의하기</a>
+            </div>
+            <div class="hero-shapes">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-inner">
+            <div class="section-title">
+                <h2>시험 서비스</h2>
+                <p>전문 인력과 최신 장비로 정확한 시험 결과를 제공합니다</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🧪</div>
+                    <h3>약효·약해 시험</h3>
+                    <p>농약의 효과와 작물에 대한 안전성을 과학적으로 검증하여 신뢰할 수 있는 데이터를 제공합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>잔류성 시험</h3>
+                    <p>농산물 내 농약 잔류량을 정밀 분석하여 안전한 먹거리 생산에 기여합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>독성 시험</h3>
+                    <p>농약의 독성을 체계적으로 평가하여 사용자와 환경의 안전을 보장합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>품질 분석</h3>
+                    <p>농약 제품의 품질을 정밀하게 분석하여 기준 적합 여부를 판정합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="about">
+        <div class="section-inner">
+            <div class="features-grid">
+                <div class="features-image">🏢</div>
+                <div class="features-content">
+                    <h3>CNL 농약시험연구소를 소개합니다</h3>
+                    <p>저희 연구소는 농약등록시험기관으로서 축적된 경험과 전문성을 바탕으로 농약의 효력시험, 잔류성시험, 독성시험 등 다양한 분야의 시험을 수행하고 있습니다.</p>
+                    <ul class="feature-list">
+                        <li>농촌진흥청 지정 공인시험연구기관</li>
+                        <li>최첨단 분석 장비 보유</li>
+                        <li>박사급 전문 연구인력 다수 보유</li>
+                        <li>GLP(우수실험실운영기준) 인증</li>
+                        <li>ISO/IEC 17025 국제공인시험기관</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>25+</h3>
+                <p>연구 경력 (년)</p>
+            </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>완료 프로젝트</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>전문 연구인력</p>
+            </div>
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>협력 기업</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="section" id="research">
+        <div class="section-inner">
+            <div class="section-title">
+                <h2>연구 분야</h2>
+                <p>지속 가능한 농업을 위한 연구개발에 힘쓰고 있습니다</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>친환경 농약 개발</h3>
+                    <p>환경과 생태계에 미치는 영향을 최소화하는 친환경 농약 연구를 진행합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🦠</div>
+                    <h3>병해충 방제 연구</h3>
+                    <p>작물별 병해충 특성을 분석하고 효과적인 방제 방법을 연구합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧬</div>
+                    <h3>생물농약 연구</h3>
+                    <p>미생물 및 천연물질을 활용한 생물농약 개발 연구를 수행합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>효능 증진 연구</h3>
+                    <p>농약의 효과를 극대화하고 사용량을 줄이는 기술을 연구합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Section -->
+    <section class="section notice-section" id="notice">
+        <div class="section-inner">
+            <div class="section-title">
+                <h2>소식 및 공지</h2>
+                <p>CNL 농약시험연구소의 새로운 소식을 전해드립니다</p>
+            </div>
+            <div class="notice-grid">
+                <div class="notice-box">
+                    <h3>공지사항</h3>
+                    <ul class="notice-list">
+                        <li>
+                            <a href="#">2026년 시험 의뢰 접수 안내</a>
+                            <span>2026.01.28</span>
+                        </li>
+                        <li>
+                            <a href="#">설 연휴 휴무 안내 (2/7~2/11)</a>
+                            <span>2026.01.25</span>
+                        </li>
+                        <li>
+                            <a href="#">GLP 인증 갱신 완료</a>
+                            <span>2026.01.20</span>
+                        </li>
+                        <li>
+                            <a href="#">신규 분석장비 도입 안내</a>
+                            <span>2026.01.15</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notice-box">
+                    <h3>연구소 소식</h3>
+                    <ul class="notice-list">
+                        <li>
+                            <a href="#">친환경 농약 연구 성과 발표</a>
+                            <span>2026.01.27</span>
+                        </li>
+                        <li>
+                            <a href="#">농촌진흥청 공동 연구 협약 체결</a>
+                            <span>2026.01.22</span>
+                        </li>
+                        <li>
+                            <a href="#">국제 학술대회 참가 및 논문 발표</a>
+                            <span>2026.01.18</span>
+                        </li>
+                        <li>
+                            <a href="#">신입 연구원 채용 공고</a>
+                            <span>2026.01.10</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta" id="contact">
+        <div class="section-inner">
+            <div class="cta-box">
+                <div class="cta-text">
+                    <h3>시험 의뢰 및 상담이 필요하신가요?</h3>
+                    <p>전문 상담원이 친절하게 안내해 드리겠습니다.</p>
+                </div>
+                <a href="tel:02-1234-5678" class="cta-btn">📞 02-1234-5678</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <div class="footer-logo">CNL 농약시험연구소</div>
+                    <p>
+                        주소: 서울특별시 강남구 테헤란로 123, 연구빌딩 5층<br>
+                        대표전화: 02-1234-5678 | 팩스: 02-1234-5679<br>
+                        이메일: contact@cnl-lab.co.kr<br>
+                        사업자등록번호: 123-45-67890
+                    </p>
+                </div>
+                <div class="footer-menu">
+                    <h4>회사소개</h4>
+                    <ul>
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">조직도</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="footer-menu">
+                    <h4>시험서비스</h4>
+                    <ul>
+                        <li><a href="#">약효·약해 시험</a></li>
+                        <li><a href="#">잔류성 시험</a></li>
+                        <li><a href="#">독성 시험</a></li>
+                        <li><a href="#">품질 분석</a></li>
+                    </ul>
+                </div>
+                <div class="footer-menu">
+                    <h4>고객지원</h4>
+                    <ul>
+                        <li><a href="#">시험의뢰</a></li>
+                        <li><a href="#">자료실</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 CNL 농약시험연구소. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu
+                    document.getElementById('nav').classList.remove('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = '#fff';
+            }
+        });
+    </script>
+</body>
+</html>
