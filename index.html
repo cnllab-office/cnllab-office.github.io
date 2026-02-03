@@ -608,6 +608,7 @@
                 <a href="#services">실험분야</a>
                 <a href="#research">연구분야</a>
                 <a href="#notice">소식및공지</a>
+                <a href="#location">찾아오시는길</a>
                 <a href="#contact">문의하기</a>
             </nav>
             <div class="mobile-menu" onclick="toggleMenu()">☰</div>
@@ -795,6 +796,37 @@
                     <p>친절하게 안내해 드리겠습니다.</p>
                 </div>
                 <a href="tel:02-1234-5678" class="cta-btn">📞 031-336-8390</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 찾아오시는길 Section -->
+    <section class="section" id="location">
+        <div class="section-inner">
+            <div class="section-title">
+                <h2>찾아오시는길</h2>
+                <p>경기도 용인시 처인구 백암면 백원로 491</p>
+            </div>
+            <div class="map-container" style="width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 30px rgba(0,0,0,0.08);">
+                <!-- 카카오맵 - 지도퍼가기 -->
+                <div id="daumRoughmapContainer1738660000000" class="root_daum_roughmap root_daum_roughmap_landing" style="width: 100%;"></div>
+                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                <script charset="UTF-8">
+                    new daum.roughmap.Lander({
+                        "timestamp" : "1738660000000",
+                        "key" : "2m56e",
+                        "mapHeight" : "400"
+                    }).render();
+                </script>
+                <!-- 상호명칭 변경 -->
+                <script>
+                    setTimeout(function() {
+                        const element = document.querySelector('.roughmap_lebel_text');
+                        if (element) {
+                            element.textContent = '씨엔엘리서치';
+                        }
+                    }, 500);
+                </script>
             </div>
         </div>
     </section>
