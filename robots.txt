@@ -1,0 +1,15 @@
+# robots.txt for cnllab.co.kr
+# C&L Research - 농약등록실험 전문기관
+
+User-agent: *
+Allow: /
+
+# Sitemap 위치
+Sitemap: https://www.cnllab.co.kr/sitemap.xml
+
+# 크롤링 제한 (필요시 추가)
+# Disallow: /admin/
+# Disallow: /private/
+
+# 크롤링 딜레이 (서버 부하 방지)
+Crawl-delay: 1

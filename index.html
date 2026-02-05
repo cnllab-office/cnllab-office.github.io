@@ -23,12 +23,31 @@
     <meta property="og:site_name" content="씨엔엘리서치">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="C&L Research | 신뢰할 수 있는 농약등록실험 전문기관">
     <meta name="twitter:description" content="농촌진흥청 지정 농약등록 약효·약해 시험연구기관. 전문성과 신뢰를 바탕으로 농업 발전에 기여합니다.">
     <meta name="twitter:image" content="https://www.cnllab.co.kr/assets/images/logo.jpg">
 
-    <!-- 구조화된 데이터 (JSON-LD) -->
+    <!-- 추가 Open Graph 이미지 속성 -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="C&L Research 로고">
+
+    <!-- 모바일 및 브라우저 설정 -->
+    <meta name="theme-color" content="#1a6b3c">
+    <meta name="msapplication-TileColor" content="#1a6b3c">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="씨엔엘리서치">
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+
+    <!-- 구조화된 데이터 (JSON-LD) - Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -43,7 +62,7 @@
             "streetAddress": "백암면 백원로 491",
             "addressLocality": "용인시 처인구",
             "addressRegion": "경기도",
-            "postalCode": "",
+            "postalCode": "17405",
             "addressCountry": "KR"
         },
         "contactPoint": {
@@ -51,9 +70,143 @@
             "telephone": "+82-31-336-8390",
             "faxNumber": "+82-31-336-8391",
             "email": "sjlee@cnllab.co.kr",
-            "contactType": "customer service"
+            "contactType": "customer service",
+            "availableLanguage": ["Korean"]
         },
         "sameAs": []
+    }
+    </script>
+
+    <!-- 구조화된 데이터 (JSON-LD) - LocalBusiness (지역검색 최적화) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ResearchOrganization",
+        "name": "씨엔엘리서치",
+        "alternateName": "C&L Research",
+        "image": "https://www.cnllab.co.kr/assets/images/logo.jpg",
+        "url": "https://www.cnllab.co.kr",
+        "telephone": "+82-31-336-8390",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "백암면 백원로 491",
+            "addressLocality": "용인시",
+            "addressRegion": "경기도",
+            "postalCode": "17405",
+            "addressCountry": "KR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 37.1234,
+            "longitude": 127.3456
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "대한민국"
+        }
+    }
+    </script>
+
+    <!-- 구조화된 데이터 (JSON-LD) - Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "농약등록 시험연구",
+        "provider": {
+            "@type": "Organization",
+            "name": "씨엔엘리서치"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "대한민국"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "농약시험 서비스",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "약효·약해 살균제 실험"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "약효·약해 살충제 실험"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "기초실험"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "작물재배 컨설팅"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- 구조화된 데이터 (JSON-LD) - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://www.cnllab.co.kr/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "회사소개",
+                "item": "https://www.cnllab.co.kr/#about"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "실험분야",
+                "item": "https://www.cnllab.co.kr/#services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "연구분야",
+                "item": "https://www.cnllab.co.kr/#research"
+            }
+        ]
+    }
+    </script>
+
+    <!-- 구조화된 데이터 (JSON-LD) - WebSite (사이트 검색) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "씨엔엘리서치",
+        "alternateName": "C&L Research",
+        "url": "https://www.cnllab.co.kr"
     }
     </script>
 
@@ -61,6 +214,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Skip Navigation (접근성) */
+        .skip-nav {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1a6b3c;
+            color: #fff;
+            padding: 10px 20px;
+            z-index: 10000;
+            text-decoration: none;
+            font-weight: 600;
+            transition: top 0.3s;
+        }
+
+        .skip-nav:focus {
+            top: 0;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -143,6 +314,15 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            color: #333;
+        }
+
+        .mobile-menu:focus {
+            outline: 2px solid #1a6b3c;
+            outline-offset: 2px;
         }
 
         /* Hero Section */
@@ -657,11 +837,16 @@
     </style>
 </head>
 <body>
+    <!-- Skip Navigation (접근성) -->
+    <a href="#main-content" class="skip-nav">본문 바로가기</a>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="header-inner">
-            <a href="#" class="logo"><img src="assets/images/logo.jpg" alt="C&L Research 로고" style="height: 50px;"></a>
-            <nav class="nav" id="nav">
+            <a href="/" class="logo" aria-label="씨엔엘리서치 홈페이지">
+                <img src="assets/images/logo.jpg" alt="C&L Research - 농약등록실험 전문기관" style="height: 50px;">
+            </a>
+            <nav class="nav" id="nav" role="navigation" aria-label="주요 메뉴">
                 <a href="#about">회사소개</a>
                 <a href="#services">실험분야</a>
                 <a href="#research">연구분야</a>
@@ -669,12 +854,17 @@
                 <a href="#location">찾아오시는길</a>
                 <a href="#contact">문의하기</a>
             </nav>
-            <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+                <span aria-hidden="true">☰</span>
+            </button>
         </div>
     </header>
 
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-label="메인 배너">
         <div class="hero-content">
             <div class="hero-text">
                 <h1>신뢰할 수 있는<br>농약 등록실험 전문기관</h1>
@@ -688,10 +878,10 @@
     </section>
 
     <!-- Services Section -->
-    <section class="section" id="services">
+    <section class="section" id="services" aria-labelledby="services-title">
         <div class="section-inner">
             <div class="section-title">
-                <h2>실험 분야</h2>
+                <h2 id="services-title">실험 분야</h2>
                 <p>전문 인력과 체계적인 프로토콜로 신뢰도 높은 시험 결과를 제공합니다</p>
             </div>
             <div class="service-grid">
@@ -720,12 +910,12 @@
     </section>
 
     <!-- Features Section -->
-    <section class="section features" id="about">
+    <section class="section features" id="about" aria-labelledby="about-title">
         <div class="section-inner">
             <div class="features-grid">
-                <div class="features-image">🏢</div>
+                <div class="features-image" role="img" aria-label="회사 건물 아이콘">🏢</div>
                 <div class="features-content">
-                    <h3>C&L Research를 소개합니다</h3>
+                    <h3 id="about-title">C&L Research를 소개합니다</h3>
                     <p>저희 연구소는 농약등록 실험기관으로서 축적된 경험과 전문성을 바탕으로 농약의 등록실험 및 기초시험을 수행하고 있습니다.</p>
                     <ul class="feature-list">
                         <li>농촌진흥청 지정 약효 및 약해 시험시험연구기관</li>
@@ -738,7 +928,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats" aria-label="주요 실적 통계">
         <div class="stats-grid">
             <div class="stat-item">
                 <h3>25+</h3>
@@ -760,10 +950,10 @@
     </section>
 
     <!-- Research Section -->
-    <section class="section" id="research">
+    <section class="section" id="research" aria-labelledby="research-title">
         <div class="section-inner">
             <div class="section-title">
-                <h2>연구 분야</h2>
+                <h2 id="research-title">연구 분야</h2>
                 <p>지속 가능한 농업을 위한 연구개발에 힘쓰고 있습니다</p>
             </div>
             <div class="service-grid">
@@ -792,10 +982,10 @@
     </section>
 
     <!-- Notice Section -->
-    <section class="section notice-section" id="notice">
+    <section class="section notice-section" id="notice" aria-labelledby="notice-title">
         <div class="section-inner">
             <div class="section-title">
-                <h2>소식 및 공지</h2>
+                <h2 id="notice-title">소식 및 공지</h2>
                 <p>CNL 농약시험연구소의 새로운 소식을 전해드립니다</p>
             </div>
             <div class="notice-grid">
@@ -846,11 +1036,11 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section cta" id="contact">
+    <section class="section cta" id="contact" aria-labelledby="contact-title">
         <div class="section-inner">
             <div class="cta-box">
                 <div class="cta-text">
-                    <h3>시험 의뢰 및 상담이 필요하신가요?</h3>
+                    <h3 id="contact-title">시험 의뢰 및 상담이 필요하신가요?</h3>
                     <p>친절하게 안내해 드리겠습니다.</p>
                 </div>
                 <a href="tel:031-336-8390" class="cta-btn">📞 031-336-8390</a>
@@ -859,10 +1049,10 @@
     </section>
 
     <!-- 찾아오시는길 Section -->
-    <section class="section" id="location">
+    <section class="section" id="location" aria-labelledby="location-title">
         <div class="section-inner">
             <div class="section-title">
-                <h2>찾아오시는길</h2>
+                <h2 id="location-title">찾아오시는길</h2>
                 <p>경기도 용인시 처인구 백암면 백원로 491</p>
             </div>
 			
@@ -892,12 +1082,17 @@
         </div>
     </section>
 
+    </main>
+    <!-- End Main Content -->
+
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-info">
-                    <div class="footer-logo"><img src="assets/images/logo.jpg" alt="C&L Research 로고" style="height: 40px;"></div>
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.jpg" alt="C&L Research - 농약등록실험 전문기관" style="height: 40px;" loading="lazy">
+                    </div>
                     <p>
                         주소: 경기도 용인시 처인구 백암면 백원로 491<br>
                         대표전화: 031-336-8390 | 팩스: 031-336-8391<br>
@@ -905,33 +1100,33 @@
                         사업자등록번호: 399-07-03089
                     </p>
                 </div>
-                <div class="footer-menu">
+                <nav class="footer-menu" aria-label="회사소개 메뉴">
                     <h4>회사소개</h4>
                     <ul>
-                        <li><a href="#">인사말</a></li>
-                        <li><a href="#">연혁</a></li>
-                        <li><a href="#">조직도</a></li>
-                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#about">인사말</a></li>
+                        <li><a href="#about">연혁</a></li>
+                        <li><a href="#about">조직도</a></li>
+                        <li><a href="#location">오시는 길</a></li>
                     </ul>
-                </div>
-                <div class="footer-menu">
+                </nav>
+                <nav class="footer-menu" aria-label="시험서비스 메뉴">
                     <h4>시험서비스</h4>
                     <ul>
-                        <li><a href="#">약효·약해 시험</a></li>
-                        <li><a href="#">잔류성 시험</a></li>
-                        <li><a href="#">독성 시험</a></li>
-                        <li><a href="#">품질 분석</a></li>
+                        <li><a href="#services">약효·약해 시험</a></li>
+                        <li><a href="#services">잔류성 시험</a></li>
+                        <li><a href="#services">독성 시험</a></li>
+                        <li><a href="#services">품질 분석</a></li>
                     </ul>
-                </div>
-                <div class="footer-menu">
+                </nav>
+                <nav class="footer-menu" aria-label="고객지원 메뉴">
                     <h4>고객지원</h4>
                     <ul>
-                        <li><a href="#">시험의뢰</a></li>
-                        <li><a href="#">자료실</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">문의하기</a></li>
+                        <li><a href="#contact">시험의뢰</a></li>
+                        <li><a href="#notice">자료실</a></li>
+                        <li><a href="#notice">FAQ</a></li>
+                        <li><a href="#contact">문의하기</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 CNL 농약시험연구소. All Rights Reserved.</p>
@@ -942,7 +1137,11 @@
     <script>
         function toggleMenu() {
             const nav = document.getElementById('nav');
+            const menuBtn = document.querySelector('.mobile-menu');
             nav.classList.toggle('active');
+            const isExpanded = nav.classList.contains('active');
+            menuBtn.setAttribute('aria-expanded', isExpanded);
+            menuBtn.setAttribute('aria-label', isExpanded ? '메뉴 닫기' : '메뉴 열기');
         }
 
         // Smooth scroll
